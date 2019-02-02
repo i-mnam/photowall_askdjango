@@ -1,0 +1,39 @@
+{% extends "blog/layout.html" %}
+
+{% block title %} {{ post.title }} {% endblock %}
+{% block extra_head %}
+<style>
+    .post_photo {
+        max-width: 100%;
+    }
+    </style>
+{% endblock%}
+{% block content %}
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>{{ post.title }}</h4>
+                {% if post.photo %}
+                    <img class="post_photo" src="{{ post.photo.url }}" />
+                {% endif %}
+                <hr/>
+                {{ post.content|linebreaks }}
+                <hr/>
+                <a href="{% url "blog:index" %}" class="badge badge-pill badge-dark">목록으로</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4>{{ post.title }}</h4>
+                {% if post.photo %}
+                    <img src="{{ post.photo.url }}" />
+                {% endif %}
+                <hr/>
+                {{ post.content|linebreaks }}
+            </div>
+        </div>    
+    </div>

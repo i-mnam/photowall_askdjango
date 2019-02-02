@@ -1,10 +1,12 @@
 {% extends "blog/layout.html" %}
 {% block title %} photo list {% endblock %}
 {% block content %}
-<h1>photoWall</h1>
+<h3>take some list?</h3>
 <ul>
 {% for post in post_list %}
-    <li>{{ post.title }}</li>
+    <li>
+        <a href="{% url "blog:post_detail" post.id %}">{{ post.title }}</a>
+    </li>
 {% endfor %}
 </ul>
 {% endblock %}
