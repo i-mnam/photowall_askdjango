@@ -17,7 +17,6 @@
         // The location of Uluru
         var lng = '{{ post.lng }}';
         var lat = '{{ post.lat }}';
-        alert("lng:"+lng+"/ lat:"+lat);
         if(lat == 'None'){lat = '-25.344'; }
         if(lng == 'None'){lng = '131.036'; }
         var myLnglat = {'lat':parseInt(lat,10), 'lng':parseInt(lng,10)};
@@ -47,7 +46,23 @@
                 <hr/>
                 {{ post.content|linebreaks }}
                 <hr/>
-                <a href="{% url "blog:index" %}" class="badge badge-pill badge-dark">목록으로</a>
+                <ul>
+                {% for comment in post.comment_set.all %}
+                    <li>
+                        {{ comment.message }}
+                        &nbsp;&nbsp;
+                        by {{ comment.author }}
+                        &nbsp;&nbsp;
+                        at {{ comment.created_at }}
+                        {#<a href="{% url "blog:comment_edit" comment.post.id comment.id %}">수정</a>#}
+                        <a href="{{ comment.get_edit_url }}" class="text-info">수정</a>
+                        <a href="{{ comment.get_delete_url }}" class="text-danger">삭제</a>
+                    </li>
+                {% endfor %}
+                </ul>
+                <hr/>
+                <a href="{% url "blog:index" %}" class="btn btn-secondary">목록으로</a>
+                <a href="{% url "blog:comment_new" post.id %}" class="btn btn-info">댓글쓰기</a>
             </div>
         </div>
     </div>

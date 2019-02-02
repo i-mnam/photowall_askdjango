@@ -1,0 +1,12 @@
+{% extends "blog/layout.html" %}
+
+{% block content %}
+<h4>{{ post.title }}</h4>
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit">
+</form>
+{% endblock %}

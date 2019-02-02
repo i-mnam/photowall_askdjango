@@ -1,0 +1,5 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    Are you sure you want to delete "{{ comment.message }}" ?
+    <input type="submit" value="Yes, please delete it.">
+</form>
