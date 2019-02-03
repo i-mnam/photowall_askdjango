@@ -17,3 +17,8 @@ def signup(request):
     return render(request, 'accounts/signup.html', {
         'form' : form,
     })
+
+
+def profile(request):
+    return render(request, 'accounts/profile.html') 
+    # context_processors 덕에 user데이터를 안남겨도 템플릿에서 바로 호출 및 사용 가능

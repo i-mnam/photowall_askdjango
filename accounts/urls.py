@@ -15,4 +15,5 @@ urlpatterns = [
         'template_name':'accounts/login_form.html',
     }),
     url(r'^signup/$', views.signup, name='signup'),
+    url(r'^profile/$', views.profile, name='profile'),
 ]
