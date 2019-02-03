@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from django.contrib.auth.views import login
+from . import views
+
 
 # django.contrib.auth 
 # http://localhost:8001/accounts/login/?next=/blog/1/comment/new/
@@ -12,4 +14,5 @@ urlpatterns = [
     url(r'^login/$', login, name='login', kwargs={
         'template_name':'accounts/login_form.html',
     }),
+    url(r'^signup/$', views.signup, name='signup'),
 ]
