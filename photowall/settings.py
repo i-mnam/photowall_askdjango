@@ -125,4 +125,5 @@ MEDIA_URL = '/media/' # ?: (urls.E006) The MEDIA_URL setting must end with a sla
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # django/django/conf/global_settings.py # LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+# > http://localhost:8001/accounts/login/?next=/blog/1/comment/new/
 # django/django/contrib/auth/views.py # about logout
