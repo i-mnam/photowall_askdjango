@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
     'blog',
 ]
 
@@ -122,3 +123,6 @@ STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/' # ?: (urls.E006) The MEDIA_URL setting must end with a slash.
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# django/django/conf/global_settings.py # LOGIN_URL, LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+# django/django/contrib/auth/views.py # about logout
