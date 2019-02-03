@@ -56,7 +56,9 @@ ROOT_URLCONF = 'photowall.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'photowall', 'templates'), # 전체layout을 위해/fileSystemloader
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
